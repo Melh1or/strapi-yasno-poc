@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_menus",
+  "info": {
+    "displayName": "Menu",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Menu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

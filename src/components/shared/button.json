@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "To": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "string"
+    }
+  }
+}

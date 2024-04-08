@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_texts",
+  "info": {
+    "displayName": "Text",
+    "icon": "bold",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "variant": {
+      "type": "string",
+      "default": "regular"
+    },
+    "color": {
+      "type": "string",
+      "default": "black"
+    }
+  }
+}

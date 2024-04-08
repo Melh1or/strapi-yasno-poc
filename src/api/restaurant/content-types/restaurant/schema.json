@@ -4,7 +4,8 @@
   "info": {
     "singularName": "restaurant",
     "pluralName": "restaurants",
-    "displayName": "Restaurant"
+    "displayName": "Restaurant",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,22 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "restaurants"
+    },
+    "Photo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

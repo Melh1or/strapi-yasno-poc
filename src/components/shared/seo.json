@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_seos",
+  "info": {
+    "displayName": "SEO",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Tag": {
+      "displayName": "Tag",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.tag"
+    }
+  }
+}
