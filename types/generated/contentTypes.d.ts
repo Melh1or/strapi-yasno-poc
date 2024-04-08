@@ -863,14 +863,28 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     singularName: 'homepage';
     pluralName: 'homepages';
     displayName: 'Homepage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Title: Attribute.String;
-    subtitle: Attribute.Blocks;
-    Image1: Attribute.Media;
+    SubTitle: Attribute.String;
+    Image: Attribute.Media;
+    CabinetTitle: Attribute.String;
+    CabinetDescription: Attribute.String;
+    CabinetButton: Attribute.String;
+    CabinetLink: Attribute.String;
+    AccountTitle: Attribute.String;
+    AccountDescription: Attribute.String;
+    AccountButton: Attribute.String;
+    AccountLink: Attribute.String;
+    QuoteTitle: Attribute.String;
+    QuoteSubTitle: Attribute.String;
+    QuoteAuthor: Attribute.String;
+    Quote: Attribute.String;
+    QuoteImage: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "Homepage"
+    "displayName": "Homepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,10 +15,10 @@
     "Title": {
       "type": "string"
     },
-    "subtitle": {
-      "type": "blocks"
+    "SubTitle": {
+      "type": "string"
     },
-    "Image1": {
+    "Image": {
       "allowedTypes": [
         "images",
         "files",
@@ -25,7 +26,53 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
+    },
+    "CabinetTitle": {
+      "type": "string"
+    },
+    "CabinetDescription": {
+      "type": "string"
+    },
+    "CabinetButton": {
+      "type": "string"
+    },
+    "CabinetLink": {
+      "type": "string"
+    },
+    "AccountTitle": {
+      "type": "string"
+    },
+    "AccountDescription": {
+      "type": "string"
+    },
+    "AccountButton": {
+      "type": "string"
+    },
+    "AccountLink": {
+      "type": "string"
+    },
+    "QuoteTitle": {
+      "type": "string"
+    },
+    "QuoteSubTitle": {
+      "type": "string"
+    },
+    "QuoteAuthor": {
+      "type": "string"
+    },
+    "Quote": {
+      "type": "string"
+    },
+    "QuoteImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
