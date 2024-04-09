@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_shared_accordions",
+  "info": {
+    "displayName": "Accordion",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "detailsLink": {
+      "type": "string"
+    },
+    "detailsText": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textWithIcon": {
+      "displayName": "textWithIcon",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.text-with-icon"
+    }
+  }
+}

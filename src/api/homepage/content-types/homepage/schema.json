@@ -203,6 +203,16 @@
         }
       },
       "type": "string"
+    },
+    "accordion": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.accordion"
     }
   }
 }

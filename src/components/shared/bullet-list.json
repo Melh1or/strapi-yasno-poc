@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_bullet_lists",
+  "info": {
+    "displayName": "Bullet list",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_multi_region_blocks",
+  "info": {
+    "displayName": "MultiRegionBlock",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Txt": {
+      "type": "string"
+    },
+    "regions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::region.region"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_icons",
+  "info": {
+    "displayName": "Icon",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "IconArrowGoToBold",
+        "IconComputerRegular",
+        "IconRemoveCloseBold",
+        "IconHomeBold",
+        "IconCarRegular",
+        "IconLightEnergyFlashRegular",
+        "IconLightLampBulbRegular",
+        "IconPlugRegular"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_text_with_icons",
+  "info": {
+    "displayName": "textWithIcon",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.icon"
+    }
+  }
+}

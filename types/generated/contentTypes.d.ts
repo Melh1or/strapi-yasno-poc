@@ -856,6 +856,37 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiCopyrightCopyright extends Schema.SingleType {
+  collectionName: 'copyrights';
+  info: {
+    singularName: 'copyright';
+    pluralName: 'copyrights';
+    displayName: 'Copyright';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    left: Attribute.String;
+    right: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::copyright.copyright',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::copyright.copyright',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeaderHeader extends Schema.SingleType {
   collectionName: 'headers';
   info: {
@@ -1042,6 +1073,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
           localized: true;
         };
       }>;
+    accordion: Attribute.Component<'shared.accordion', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1077,17 +1114,108 @@ export interface ApiPagePage extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Title: Attribute.String & Attribute.Required & Attribute.Unique;
-    Path: Attribute.String & Attribute.Required & Attribute.Unique;
-    Content: Attribute.DynamicZone<['shared.text', 'shared.html-css-template']>;
-    Meta: Attribute.Component<'shared.seo'>;
+    Title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    uri: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Content: Attribute.DynamicZone<
+      [
+        'shared.text',
+        'shared.html-css-template',
+        'shared.bullet-list',
+        'shared.multi-region-block',
+        'shared.accordion',
+        'shared.button',
+        'shared.date-status',
+        'shared.icon',
+        'shared.link',
+        'shared.menu',
+        'shared.seo',
+        'shared.tag',
+        'shared.text-with-icon'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Meta: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    regions: Attribute.Relation<
+      'api::page.page',
+      'oneToMany',
+      'api::region.region'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::page.page',
+      'oneToMany',
+      'api::page.page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiRegionRegion extends Schema.CollectionType {
+  collectionName: 'regions';
+  info: {
+    singularName: 'region';
+    pluralName: 'regions';
+    displayName: 'Region';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    region: Attribute.String;
+    page: Attribute.Relation<
+      'api::region.region',
+      'manyToOne',
+      'api::page.page'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::region.region',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::region.region',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1103,16 +1231,43 @@ export interface ApiRestaurantRestaurant extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    Description: Attribute.Blocks;
+    Name: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     categories: Attribute.Relation<
       'api::restaurant.restaurant',
       'manyToMany',
       'api::category.category'
     >;
-    Photo: Attribute.Media;
-    SEO: Attribute.Component<'shared.seo'>;
+    Photo: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SEO: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1128,6 +1283,12 @@ export interface ApiRestaurantRestaurant extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::restaurant.restaurant',
+      'oneToMany',
+      'api::restaurant.restaurant'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1151,9 +1312,11 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::blackout-schedule.blackout-schedule': ApiBlackoutScheduleBlackoutSchedule;
       'api::category.category': ApiCategoryCategory;
+      'api::copyright.copyright': ApiCopyrightCopyright;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::page.page': ApiPagePage;
+      'api::region.region': ApiRegionRegion;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
     }
   }
