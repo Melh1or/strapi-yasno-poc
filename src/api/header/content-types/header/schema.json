@@ -30,6 +30,11 @@
         "shared.menu",
         "shared.button"
       ]
+    },
+    "RightButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.link"
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_html_css_templates",
+  "info": {
+    "displayName": "HtmlCssTemplate",
+    "icon": "medium"
+  },
+  "options": {},
+  "attributes": {
+    "Html": {
+      "type": "text",
+      "default": "Html"
+    },
+    "Css": {
+      "type": "text",
+      "default": "Css"
+    }
+  }
+}

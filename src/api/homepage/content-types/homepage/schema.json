@@ -10,69 +10,199 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "SubTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CabinetTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CabinetDescription": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CabinetButton": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CabinetLink": {
-      "type": "string"
-    },
-    "AccountTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "AccountDescription": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "AccountButton": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "AccountLink": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "QuoteTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "QuoteSubTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "QuoteAuthor": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Quote": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "QuoteImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "ApproachTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "ApproachSubtitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "CabinetIcon": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "IconArrowGoToBold",
+        "IconComputerRegular",
+        "IconRemoveCloseBold",
+        "IconHomeBold"
+      ]
+    },
+    "AccountIcon": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "IconArrowGoToBold",
+        "IconComputerRegular",
+        "IconRemoveCloseBold",
+        "IconHomeBold"
+      ]
+    },
+    "AccountTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

@@ -788,6 +788,39 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlackoutScheduleBlackoutSchedule extends Schema.SingleType {
+  collectionName: 'blackout_schedules';
+  info: {
+    singularName: 'blackout-schedule';
+    pluralName: 'blackout-schedules';
+    displayName: 'BlackoutSchedule';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Visible: Attribute.Boolean;
+    Text: Attribute.String;
+    BoldText: Attribute.String;
+    path: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blackout-schedule.blackout-schedule',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blackout-schedule.blackout-schedule',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -839,6 +872,7 @@ export interface ApiHeaderHeader extends Schema.SingleType {
     Navbar: Attribute.DynamicZone<
       ['shared.link', 'shared.menu', 'shared.button']
     >;
+    RightButton: Attribute.Component<'shared.link'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -868,23 +902,146 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    Title: Attribute.String;
-    SubTitle: Attribute.String;
-    Image: Attribute.Media;
-    CabinetTitle: Attribute.String;
-    CabinetDescription: Attribute.String;
-    CabinetButton: Attribute.String;
-    CabinetLink: Attribute.String;
-    AccountTitle: Attribute.String;
-    AccountDescription: Attribute.String;
-    AccountButton: Attribute.String;
-    AccountLink: Attribute.String;
-    QuoteTitle: Attribute.String;
-    QuoteSubTitle: Attribute.String;
-    QuoteAuthor: Attribute.String;
-    Quote: Attribute.String;
-    QuoteImage: Attribute.Media;
+    Title: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    SubTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CabinetTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CabinetDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CabinetButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CabinetLink: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AccountDescription: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AccountButton: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AccountLink: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    QuoteTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    QuoteSubTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    QuoteAuthor: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Quote: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    QuoteImage: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ApproachTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ApproachSubtitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    CabinetIcon: Attribute.Enumeration<
+      [
+        'IconArrowGoToBold',
+        'IconComputerRegular',
+        'IconRemoveCloseBold',
+        'IconHomeBold'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AccountIcon: Attribute.Enumeration<
+      [
+        'IconArrowGoToBold',
+        'IconComputerRegular',
+        'IconRemoveCloseBold',
+        'IconHomeBold'
+      ]
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    AccountTitle: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -900,6 +1057,12 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToMany',
+      'api::homepage.homepage'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -917,7 +1080,7 @@ export interface ApiPagePage extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String & Attribute.Required & Attribute.Unique;
     Path: Attribute.String & Attribute.Required & Attribute.Unique;
-    Content: Attribute.DynamicZone<['shared.text']>;
+    Content: Attribute.DynamicZone<['shared.text', 'shared.html-css-template']>;
     Meta: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -986,6 +1149,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::blackout-schedule.blackout-schedule': ApiBlackoutScheduleBlackoutSchedule;
       'api::category.category': ApiCategoryCategory;
       'api::header.header': ApiHeaderHeader;
       'api::homepage.homepage': ApiHomepageHomepage;

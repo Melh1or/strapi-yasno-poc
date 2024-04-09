@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_date_statuses",
+  "info": {
+    "displayName": "date - status",
+    "icon": "car"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "string"
+    },
+    "enable": {
+      "type": "boolean"
+    }
+  }
+}

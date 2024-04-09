@@ -13,6 +13,30 @@ export interface SharedButton extends Schema.Component {
   };
 }
 
+export interface SharedDateStatus extends Schema.Component {
+  collectionName: 'components_shared_date_statuses';
+  info: {
+    displayName: 'date - status';
+    icon: 'car';
+  };
+  attributes: {
+    date: Attribute.String;
+    enable: Attribute.Boolean;
+  };
+}
+
+export interface SharedHtmlCssTemplate extends Schema.Component {
+  collectionName: 'components_shared_html_css_templates';
+  info: {
+    displayName: 'HtmlCssTemplate';
+    icon: 'medium';
+  };
+  attributes: {
+    Html: Attribute.Text & Attribute.DefaultTo<'Html'>;
+    Css: Attribute.Text & Attribute.DefaultTo<'Css'>;
+  };
+}
+
 export interface SharedLink extends Schema.Component {
   collectionName: 'components_shared_links';
   info: {
@@ -81,6 +105,8 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'shared.button': SharedButton;
+      'shared.date-status': SharedDateStatus;
+      'shared.html-css-template': SharedHtmlCssTemplate;
       'shared.link': SharedLink;
       'shared.menu': SharedMenu;
       'shared.seo': SharedSeo;

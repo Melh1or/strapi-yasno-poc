@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "blackout_schedules",
+  "info": {
+    "singularName": "blackout-schedule",
+    "pluralName": "blackout-schedules",
+    "displayName": "BlackoutSchedule"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Visible": {
+      "type": "boolean"
+    },
+    "Text": {
+      "type": "string"
+    },
+    "BoldText": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    }
+  }
+}

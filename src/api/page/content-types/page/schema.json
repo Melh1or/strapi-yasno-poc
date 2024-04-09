@@ -25,7 +25,8 @@
     "Content": {
       "type": "dynamiczone",
       "components": [
-        "shared.text"
+        "shared.text",
+        "shared.html-css-template"
       ]
     },
     "Meta": {
